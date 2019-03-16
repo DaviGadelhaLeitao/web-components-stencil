@@ -15,7 +15,7 @@ class Tooltip extends HTMLElement {
         // closing if typically something you won't do because even so there are ways to access it
         // and it simply does not worth the effort. Now this element has it's own shadow DOM tree attached
         // to it.
-        //this.attachShadow({mode: 'open'});
+        this.attachShadow({mode: 'open'});
     }
     
     connectedCallback() {
@@ -26,8 +26,8 @@ class Tooltip extends HTMLElement {
         tooltipIcon.textContent = ' (?)';
         tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
         tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
-        this.appendChild(tooltipIcon);
-        //this.shadowRoot.appendChild(tooltipIcon);
+        //this.appendChild(tooltipIcon);
+        this.shadowRoot.appendChild(tooltipIcon);
         this.style.position = 'relative';
     }
 
@@ -38,12 +38,13 @@ class Tooltip extends HTMLElement {
         this._tooltipContainer.style.color = 'white';
         this._tooltipContainer.style.position = 'absolute';
         this._tooltipContainer.style.zIndex = '10';
-        //this.shadowRoot.appendChild(this._tooltipContainer);
-        this.appendChild(this._tooltipContainer);
+        this.shadowRoot.appendChild(this._tooltipContainer);
+        //this.appendChild(this._tooltipContainer);
     }
 
     _hideTooltip() {
-        //this.shadowRoot.removeChild(this._tooltipContainer);
+        //this.removeChild(this._tooltipContainer);
+        this.shadowRoot.removeChild(this._tooltipContainer);
         this.removeChild(this._tooltipContainer);
     }
 
