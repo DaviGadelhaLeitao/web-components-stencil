@@ -16,8 +16,10 @@ class Tooltip extends HTMLElement {
         // and it simply does not worth the effort. Now this element has it's own shadow DOM tree attached
         // to it.
         this.attachShadow({mode: 'open'});
-        const template = document.querySelector('#tooltip-template');
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.innerHTML = `
+            <slot>Some default value</slot>
+            <span> (?)</span>
+        `;
     }
     
     connectedCallback() {
