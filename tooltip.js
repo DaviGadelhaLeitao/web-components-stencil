@@ -16,14 +16,15 @@ class Tooltip extends HTMLElement {
         // and it simply does not worth the effort. Now this element has it's own shadow DOM tree attached
         // to it.
         this.attachShadow({mode: 'open'});
+        const template = document.querySelector('#tooltip-template');
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
     
     connectedCallback() {
-        const tooltipIcon = document.createElement('span');
         if(this.hasAttribute('text')) {
             this._tooltipText = this.getAttribute('text');
         }
-        tooltipIcon.textContent = ' (?)';
+        const tooltipIcon = this.shadowRoot.querySelector("span");
         tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
         tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
         //this.appendChild(tooltipIcon);
@@ -45,7 +46,6 @@ class Tooltip extends HTMLElement {
     _hideTooltip() {
         //this.removeChild(this._tooltipContainer);
         this.shadowRoot.removeChild(this._tooltipContainer);
-        this.removeChild(this._tooltipContainer);
     }
 
 }
