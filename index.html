@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>web components</title>
     <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>
     <style>
         div {
             border: 2px solid orange;
@@ -18,5 +19,7 @@
     <p><uc-tooltip text=" are a set of standards.">Web Components</uc-tooltip></p>
     <uc-tooltip></uc-tooltip>
     <div>this does not get the web component style</div>
+    <a href="https://www.google.com">Google</a>
+    <a is="uc-confirm-link" href="https://www.google.com">Google</a>
 </body>
 </html>
