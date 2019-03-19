@@ -8,6 +8,10 @@
     <script src="tooltip.js"></script>
     <script src="confirm-link.js"></script>
     <style>
+        html {
+            --color-primary: rgb(202, 238, 250);
+        }
+
         a {
             margin: 20px 10px;
         }
@@ -16,16 +20,17 @@
             border: 2px solid orange;
         }
 
+        uc-tooltip {
+            border: 1px solid blue;
+            padding: 0.15rem;
+        }
+
         .highlight {
             /* background-color: rgb(247, 247, 128); */
             /* light dom styling overrides shadow dom styling for projected or slotted content. */
             /* border-bottom: 2px solid blue; */
         }
 
-        uc-tooltip {
-            border: 1px solid blue;
-            padding: 0.15rem;
-        }
     </style>
 </head>
 <body>
