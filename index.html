@@ -11,12 +11,19 @@
         div {
             border: 2px solid orange;
         }
+        .highlight {
+            background-color: rgb(247, 247, 128);
+            /* light dom styling overrides shadow dom styling for projected or slotted content. */
+            /* border-bottom: 2px solid blue; */
+        }
     </style>
 </head>
 <body>
    
 
-    <p><uc-tooltip text=" are a set of standards.">Web Components</uc-tooltip></p>
+    <p><uc-tooltip text=" are a set of standards.">
+       <span class="highlight"> Web Components</span>
+    </uc-tooltip></p>
     <uc-tooltip></uc-tooltip>
     <div>this does not get the web component style</div>
     <a href="https://www.google.com">Google</a>
