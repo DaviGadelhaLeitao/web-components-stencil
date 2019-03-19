@@ -8,40 +8,22 @@
     <script src="tooltip.js"></script>
     <script src="confirm-link.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         html {
             --color-primary: rgb(202, 238, 250);
+            font-family: sans-serif;
         }
-
-        a {
-            margin: 20px 10px;
-        }
-
-        div {
-            border: 2px solid orange;
-        }
-
-        uc-tooltip {
-            border: 1px solid blue;
-            padding: 0.15rem;
-        }
-
-        .highlight {
-            /* background-color: rgb(247, 247, 128); */
-            /* light dom styling overrides shadow dom styling for projected or slotted content. */
-            /* border-bottom: 2px solid blue; */
-        }
-
     </style>
 </head>
 <body>
    
 
     <p><uc-tooltip class="important" text=" are a set of standards.">
-       <span class="highlight"> Web Components</span>
+       <span> Web Components</span>
     </uc-tooltip></p>
-    <uc-tooltip></uc-tooltip>
-    <p>this does not get the web component style</p>
-    <a href="https://www.google.com">Google</a>
+    <p><uc-tooltip></uc-tooltip></p>
     <a is="uc-confirm-link" href="https://www.google.com">Google</a>
 </body>
 </html>

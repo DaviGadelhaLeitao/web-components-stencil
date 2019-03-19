@@ -19,10 +19,16 @@ class Tooltip extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 div {
+                    font-weight: normal;
                     background-color: black;
                     color: white;
                     position: absolute;
+                    top: 1.5rem;
+                    left: 0.75rem;
                     z-index: 10;
+                    padding: 0.15rem;
+                    border-radius: 3px;
+                    box-shadow: 1px 1px 6px rgba(0,0,0,0.26);
                 }
 
                 :host(.important) {
@@ -49,7 +55,7 @@ class Tooltip extends HTMLElement {
                     border-radius: 50%;
                 }
             </style>
-            <slot>Some default value</slot>
+            <slot>Some default</slot>
             <span class="icon">?</span>
         `;
     }
