@@ -2,7 +2,7 @@ class Tooltip extends HTMLElement {
     constructor() {
         super();
         this._tooltipContainer;
-
+        this._tooltipIcon;
         // initializing tooptipText with some value
         this._tooltipText = "I'm the default when you hover over me!";
 
@@ -64,11 +64,10 @@ class Tooltip extends HTMLElement {
         if(this.hasAttribute('text')) {
             this._tooltipText = this.getAttribute('text');
         }
-        const tooltipIcon = this.shadowRoot.querySelector("span");
-        tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
-        tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
+        this._tooltipIcon = this.shadowRoot.querySelector("span");
+        this._tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
+        this._tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
         //this.appendChild(tooltipIcon);
-        this.shadowRoot.appendChild(tooltipIcon);
         this.style.position = 'relative';
     }
 
@@ -85,6 +84,12 @@ class Tooltip extends HTMLElement {
     // we return these attributes
     static get observedAttributes() {
         return ['text'];
+    }
+
+    // this will be executed when the element is removed from the DOM
+    disconnectedCallback() {
+        this._tooltipIcon.removeEventListener('mouseenter', this._showTooltip.bind(this))
+        this._tooltipIcon.removeEventListener('mouseleave', this._hideTooltip.bind(this))
     }
 
     _showTooltip() {
