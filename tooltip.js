@@ -25,7 +25,7 @@ class Tooltip extends HTMLElement {
                     z-index: 10;
                 }
 
-                :host {
+                :host(.important) {
                     background: #ccc;
                 }
 
