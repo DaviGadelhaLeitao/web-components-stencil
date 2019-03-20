@@ -56,6 +56,7 @@ class Tooltip extends HTMLElement {
         this._tooltipIcon.addEventListener('mouseenter', this._showTooltip.bind(this));
         this._tooltipIcon.addEventListener('mouseleave', this._hideTooltip.bind(this));
         this.style.position = 'relative';
+        this._render();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
