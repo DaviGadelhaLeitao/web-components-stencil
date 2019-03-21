@@ -67,6 +67,36 @@ class Modal extends HTMLElement {
 
             </div>
         `;
+        this._modalVisible = false;
+    }
+
+    connectedCallback() {
+        let showButton = document.querySelector("#showButton");
+        showButton.addEventListener('click', this._showModal.bind(this));
+    }
+
+    disconnectedCallback() {
+        
+    }
+
+    _render() {
+        let modalContainer = document.createElement('div');
+        if(this._modalVisible) {
+            this.shadowRoot.appendChild(modalContainer);
+        } else {
+            if (modalContainer) this.shadowRoot.removeChild(modalContainer);
+        }
+
+    }
+
+    _showModal() {
+        this._modalVisible = true;
+        this._render();
+    }
+
+    _hideModal() {
+        this._modalVisible = false;
+        this._render();
     }
 
 
