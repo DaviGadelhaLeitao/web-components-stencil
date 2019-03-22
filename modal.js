@@ -76,6 +76,16 @@ class Modal extends HTMLElement {
               </section>
           </div>
       `;
+
+    const slots = this.shadowRoot.querySelectorAll("slot");
+    slots[1].addEventListener("slotchange", event => {
+      // The assignedNodes() property of the HTMLSlotElement interface returns a
+      // sequence of the nodes assigned to this slot, and if the flatten option is
+      // set to true, the assigned nodes of any other slots that are descendants of this slot.
+      // If no assigned nodes are found, it returns the slot's fallback content.
+      // If you ever need to get access to the content that is projected into your slot.
+      console.dir(slots[1].assignedNodes());
+    });
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
