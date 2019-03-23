@@ -32,6 +32,11 @@
          console.log('confirmed...');
      });
 
+     // At the present moment this cancel is being dispatched from a click event listener from the component.
+     // But, this event the way it is belongs to the button and therefore is could not be listened from
+     // outside the component.
+     // There is an event listener into modal.js line 95 that can capture that event. But, this is not ideal
+     // and it will be solved into the next commit.
      modal.addEventListener('cancel', () => {
          console.log('cancelled...');
      });
