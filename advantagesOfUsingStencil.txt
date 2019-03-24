@@ -11,3 +11,20 @@ re-render a render() when you change some inputs for that render(). As examples 
 properties of a component class, and if any these change then the Stencil will re-render the screen and update the DOM
 automatically. What I mean by that, is that Stencil will output code that gives us a web component that has all the code
 in it to automatically watch such properties and then update the DOM. And it gives us a nicer syntax for doing so.
+
+------------------------------------------------------------------------
+Futher explaning the advantages of using Stencil to build web components
+
+- It produces a highly optimized and faster web component, a native web component.
+
+- And, we'll ship a tiny bit of extra code, which will look for the browser that is
+getting used by the user and automatically load any pollyfills we might need to make
+our web component work in older browsers too. So we got this out of the box working
+functionally builtin.
+
+So, we got an easier way of building web components because of this syntax, which will turn out
+to be much easier to understand than having large components built without the use of Stencil,
+and we'll get components that works with all browsers with zero extra configuration from our
+side.
+
+And these are two awesome reasons to use Stencil.
