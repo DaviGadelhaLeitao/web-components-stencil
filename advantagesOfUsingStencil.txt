@@ -1,10 +1,10 @@
 Advantages of using Stencil that by it's turn uses JSX.
 
-- Stencil is a tool that allow us to write a more error free code, thanks to Type Script (strongly typed).
+- Stencil is a tool that allow us to write a more error free code, thanks to TypeScript (strongly typed).
 
 - Stencil uses JSX that in the end compiles to JavaScript, or to commands that will actually render the appropriate
 HTML content to the screen, but that will happen behind the scenes, and you as a developer can use this HTML in JS
-syntax you don't have to manually write code that access the DOM and writes your content into the DOM.
+syntax you don't have to manually write code that access the DOM and writes it's content.
 
 - Stencil has a couple of conveniences included, for example it has a couple of features that will automatically
 re-render a render() when you change some inputs for that render(). As examples for these inputs are the @Prop(), the
