@@ -19,16 +19,24 @@ export class SideDrawer {
     // The reflectToAttr property makes the changed property have his HTML attribute value
     // changed as well.
     @Prop({reflectToAttr: true}) title: string;
+    @Prop() open: boolean;
 
     render() {
-        return (
-            <aside>
+
+        let content = null;
+        if (this.open) {
+            content = (
+                <aside>
                 <header><h1>{this.title}</h1></header>
                 <main>
                     <slot></slot>
                 </main>
             </aside>
-        );
+            );
+        }
+        return content;
+        
+        
     }
 }
 
