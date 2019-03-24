@@ -9,7 +9,13 @@
 </head>
 <body>
 
-  <uc-side-drawer></uc-side-drawer>
-
+  <uc-side-drawer title="Main Menu"></uc-side-drawer>
+  <script>
+    const sideDrawer = document.querySelector('uc-side-drawer');
+    setTimeout(() => {
+      // sideDrawer.title = "new title";
+      sideDrawer.setAttribute('title', 'It changed!');
+    }, 2000);
+  </script>
 </body>
 </html>
