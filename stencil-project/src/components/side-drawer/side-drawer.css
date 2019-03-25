@@ -20,6 +20,12 @@ header {
     position: relative;
 }
 
+header h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
 header button {
     position: absolute;
     top: 0;
@@ -63,8 +69,6 @@ header button:focus {
     outline: none;
 }
 
-header h1 {
-    font-size: 1.5rem;
-    color: white;
-    margin: 0;
+#contact-information {
+    padding: 0 1rem;
 }
