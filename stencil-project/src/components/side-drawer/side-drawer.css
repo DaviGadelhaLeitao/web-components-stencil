@@ -35,6 +35,34 @@ header button:focus {
     outline: none;
 }
 
+#tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#tabs button {
+    width: 30;
+    background: white;
+    color: black;
+    text-align: cener;
+    border: 1px solid black;
+    font-size: inherit;
+    padding: 0.15rem 0;
+}
+
+#tabs button.active,
+#tabs button:hover,
+#tabs button:active {
+    background: black;
+    color: white;
+}
+
+#tabs button:focus {
+    outline: none;
+}
+
 header h1 {
     font-size: 1.5rem;
     color: white;
