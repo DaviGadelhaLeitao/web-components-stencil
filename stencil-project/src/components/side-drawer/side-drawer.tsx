@@ -21,22 +21,17 @@ export class SideDrawer {
     @Prop({reflectToAttr: true}) title: string;
     @Prop({reflectToAttr: true}) open: boolean;
 
-    render() {
+    onCloseDrawer() {
+        this.open = false;
+    }
 
-        // let content = null;
-        // if (this.open) {
-        //     content = (
-        //         <aside>
-        //         <header><h1>{this.title}</h1></header>
-        //         <main>
-        //             <slot></slot>
-        //         </main>
-        //     </aside>
-        //     );
-        // }
+    render() {
         return (
             <aside>
-                <header><h1>{this.title}</h1></header>
+                <header>
+                    <h1>{this.title}</h1>
+                    <button onClick={this.onCloseDrawer.bind(this)}>X</button>
+                </header>
                 <main>
                     <slot></slot>
                 </main>

@@ -17,6 +17,22 @@ aside {
 header {
     padding: 1rem;
     background-color: black;
+    position: relative;
+}
+
+header button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    color: white;
+    background: transparent;
+    font-size: 1.5rem;
+    border: none;
+}
+
+header button:focus {
+    outline: none;
 }
 
 header h1 {
