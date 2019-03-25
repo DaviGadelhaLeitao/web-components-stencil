@@ -40,8 +40,9 @@
   <script>
     const sideDrawerButton = document.querySelector("#side-drawer-button");
     sideDrawerButton.addEventListener('click', () => {
-      if (!sideDrawer.open) {
-        sideDrawer.open = true;
+      if (!sideDrawer.opened) {
+        // sideDrawer.open = true;
+        sideDrawer.open();
       }
     });
     const sideDrawer = document.querySelector('uc-side-drawer');
