@@ -22,8 +22,12 @@ export namespace Components {
     'title'?: string;
   }
 
-  interface UcTooltipStencil {}
-  interface UcTooltipStencilAttributes extends StencilHTMLAttributes {}
+  interface UcTooltipStencil {
+    'text': string;
+  }
+  interface UcTooltipStencilAttributes extends StencilHTMLAttributes {
+    'text'?: string;
+  }
 }
 
 declare global {

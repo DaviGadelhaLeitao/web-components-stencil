@@ -7,6 +7,7 @@ import { Component, Prop, State } from "@stencil/core";
 })
 export class TooltipStencil {
     @State() tooltipVisible = false;
+    @Prop() text: string;
 
     onToggleTooltip() {
         this.tooltipVisible = !this.tooltipVisible;
@@ -16,7 +17,7 @@ export class TooltipStencil {
 
         let tooltip = null;
         if (this.tooltipVisible) {
-            tooltip = <div id="tooltip-text">This is the tooltip text!</div>;
+            tooltip = <div id="tooltip-text">{this.text}</div>;
         }
         return [
             <slot />,
