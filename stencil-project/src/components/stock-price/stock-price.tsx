@@ -1,4 +1,6 @@
 import { Component, State } from '@stencil/core';
+import { AV_API_KEY } from '../../global/global';
+
 @Component({
     tag: 'uc-stock-price',
     styleUrl: './stock-price.css',
@@ -10,7 +12,7 @@ export class StockPrice {
 
     onFetchStockPrice(event: Event) {
         event.preventDefault();
-        fetch('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=demo')
+        fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=${AV_API_KEY}`)
         .then(res => {
             return res.json();
         })
@@ -22,7 +24,6 @@ export class StockPrice {
         });
     }
 
-    // alpha vantage FREE API key 3GSK48Y1KU8YCORR
     render() {
         return [
             <form onSubmit={this.onFetchStockPrice.bind(this)}>
