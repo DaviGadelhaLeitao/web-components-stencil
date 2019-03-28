@@ -35,3 +35,10 @@ form button:hover {
     border: 1px solid rgb(95, 6, 95);
     background: rgb(95, 6, 95);
 }
+
+form button[disabled] {
+    background: #ccc;
+    border-color: #ccc;
+    color: white;
+    cursor: not-allowed;
+}
