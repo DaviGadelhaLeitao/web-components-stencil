@@ -38,7 +38,9 @@ export class StockFinder {
                 </button>
             </form>,
             <ul>
-                {this.searchResults.map(result => <li>{result.name}</li>)}
+                {this.searchResults.map(result => (
+                    <li><strong>{result.symbol}</strong> - {result.name}</li>
+                ))}
             </ul>
         ];
     }
