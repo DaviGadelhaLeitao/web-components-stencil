@@ -96,8 +96,12 @@ export class StockPrice {
         .catch(err => {
             this.fetchedPrice = null;
             this.error = err.message;
-            console.log(err);
         });
+    }
+
+    // special reserved name
+    hostData() {
+        return { class: this.error ? 'error' : '' };
     }
     
     render() {
