@@ -22,6 +22,9 @@ export namespace Components {
     'title'?: string;
   }
 
+  interface UcSpinner {}
+  interface UcSpinnerAttributes extends StencilHTMLAttributes {}
+
   interface UcStockFinder {}
   interface UcStockFinderAttributes extends StencilHTMLAttributes {
     'onUcSymbolSelected'?: (event: CustomEvent<string>) => void;
@@ -45,6 +48,7 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'UcSideDrawer': Components.UcSideDrawer;
+    'UcSpinner': Components.UcSpinner;
     'UcStockFinder': Components.UcStockFinder;
     'UcStockPrice': Components.UcStockPrice;
     'UcTooltipStencil': Components.UcTooltipStencil;
@@ -52,6 +56,7 @@ declare global {
 
   interface StencilIntrinsicElements {
     'uc-side-drawer': Components.UcSideDrawerAttributes;
+    'uc-spinner': Components.UcSpinnerAttributes;
     'uc-stock-finder': Components.UcStockFinderAttributes;
     'uc-stock-price': Components.UcStockPriceAttributes;
     'uc-tooltip-stencil': Components.UcTooltipStencilAttributes;
@@ -62,6 +67,12 @@ declare global {
   var HTMLUcSideDrawerElement: {
     prototype: HTMLUcSideDrawerElement;
     new (): HTMLUcSideDrawerElement;
+  };
+
+  interface HTMLUcSpinnerElement extends Components.UcSpinner, HTMLStencilElement {}
+  var HTMLUcSpinnerElement: {
+    prototype: HTMLUcSpinnerElement;
+    new (): HTMLUcSpinnerElement;
   };
 
   interface HTMLUcStockFinderElement extends Components.UcStockFinder, HTMLStencilElement {}
@@ -84,6 +95,7 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'uc-side-drawer': HTMLUcSideDrawerElement
+    'uc-spinner': HTMLUcSpinnerElement
     'uc-stock-finder': HTMLUcStockFinderElement
     'uc-stock-price': HTMLUcStockPriceElement
     'uc-tooltip-stencil': HTMLUcTooltipStencilElement
@@ -91,6 +103,7 @@ declare global {
 
   interface ElementTagNameMap {
     'uc-side-drawer': HTMLUcSideDrawerElement;
+    'uc-spinner': HTMLUcSpinnerElement;
     'uc-stock-finder': HTMLUcStockFinderElement;
     'uc-stock-price': HTMLUcStockPriceElement;
     'uc-tooltip-stencil': HTMLUcTooltipStencilElement;

@@ -45,12 +45,12 @@ export class StockPrice {
     }
 
     componentWillLoad() {
-        console.log('componentWillLoad');
-        console.log(this.stockSymbol);
+        // console.log('componentWillLoad');
+        // console.log(this.stockSymbol);
     }
     
     componentDidLoad() {
-        console.log('componentDidLoad');
+        // console.log('componentDidLoad');
         if (this.stockSymbol) {
             // this.initialStockSymbol = this.stockSymbol;
             this.stockUserInput = this.stockSymbol;
@@ -60,11 +60,11 @@ export class StockPrice {
     }
 
     componentWillUpdate() {
-        console.log('componentWillUpdate');
+        // console.log('componentWillUpdate');
     }
     
     componentDidUpdate() {
-        console.log('componentDidUpdate');
+        // console.log('componentDidUpdate');
         // if (this.stockSymbol != this.initialStockSymbol) {
         //     this.initialStockSymbol = this.stockSymbol;
         //     this.fetchStockPrice(this.stockSymbol);
@@ -72,7 +72,7 @@ export class StockPrice {
     }
     
     componentDidUnload() {
-        console.log('componentDidUnload');
+        // console.log('componentDidUnload');
     }
 
     @Listen('body:ucSymbolSelected')
@@ -119,16 +119,7 @@ export class StockPrice {
 
         if (this.loading) {
             dataContent = (
-                <div class="lds-roller">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <uc-spinner></uc-spinner>
             )
         }
 
