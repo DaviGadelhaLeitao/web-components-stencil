@@ -1,6 +1,6 @@
 :host {
     font-family: sans-serif;
-    border: 2px solid rgb(63, 1, 63);
+    border: 2px solid var(--color-primary, black);
     margin: 2rem;
     padding: 1rem;
     display: block;
@@ -14,7 +14,7 @@
 
 form input {
     font: inherit;
-    color: rgb(63, 1, 63);
+    color: var();
     padding: 0.1rem 0.25rem;
     display: block;
     margin-bottom: 0.5rem;
@@ -28,16 +28,16 @@ form button:focus {
 form button {
     font: inherit;
     padding: 0.25rem 0.5rem;
-    border: 1px solid rgb(63, 1, 63);
-    background: rgb(63, 1, 63);
+    border: 1px solid var(--color-primary, black);
+    background: var(--color-primary, black);
     color: white;
     cursor: pointer;
 }
 
 form button:active,
 form button:hover {
-    border: 1px solid rgb(95, 6, 95);
-    background: rgb(95, 6, 95);
+    border: 1px solid var(--color-primary-highlight, grey);
+    background: var(--color-primary-highlight, grey);
 }
 
 form button[disabled] {
